@@ -1,0 +1,152 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+
+# Classe
+brick:Cooling_Coil a rdfs:Class ;
+            rdfs:label "Cooling_Coil" ;
+            rdfs:comment "A point where links join and water enters or leaves the network." .
+			
+
+brick:Heating_Coil a rdfs:Class ;
+            rdfs:label "Heating_Coil" ;
+            rdfs:comment "A point where links join and water enters or leaves the network." .			
+			
+brick:Outdoor_air_damper a rdfs:Class ;
+            rdfs:label "Outdoor_air_damper" ;
+            rdfs:comment "A point where links join and water enters or leaves the network." .
+
+
+brick:Supply_air_fan a rdfs:Class ;
+            rdfs:label "Supply_air_fan" ;
+            rdfs:comment "A point where links join and water enters or leaves the network." .
+			
+brick:DataPoint a rdfs:Class ;
+    rdfs:label "DataPoint" ;
+    rdfs:comment "An individual measurement from a sensor at a specific timestamp." .
+	
+
+	
+# Object Properties For Parts of FCU
+brick:hasPart a owl:ObjectProperty ;
+    rdfs:domain brick:FCU ;
+    rdfs:range brick:Cooling_Coil ;
+    rdfs:label "has Part" ;
+    rdfs:comment "Links a system to its subcomponents." .
+	
+brick:hasPart a owl:ObjectProperty ;
+    rdfs:domain brick:FCU ;
+    rdfs:range brick:Heating_Coil ;
+    rdfs:label "has Part" ;
+    rdfs:comment "Links a system to its subcomponents." .
+	
+brick:hasPart a owl:ObjectProperty ;
+    rdfs:domain brick:FCU ;
+    rdfs:range brick:Outdoor_air_damper ;
+    rdfs:label "has Part" ;
+    rdfs:comment "Links a system to its subcomponents." .
+	
+brick:hasPart a owl:ObjectProperty ;
+    rdfs:domain brick:FCU ;
+    rdfs:range brick:Supply_air_fan ;
+    rdfs:label "has Part" ;
+    rdfs:comment "Links a system to its subcomponents." .
+	
+
+# Relationships between areas and sensors (Cooling Coil)
+brick:hasPoint a owl:ObjectProperty ;
+    rdfs:domain brick:Cooling_Coil ;
+    rdfs:range brick:FCU_CLG_EWT ;
+    rdfs:label "has Point" ;
+    rdfs:comment "Links a participant to their performed trials." .
+	
+brick:hasPoint a owl:ObjectProperty ;
+    rdfs:domain brick:Cooling_Coil ;
+    rdfs:range brick:FCU_CLG_GPM ;
+    rdfs:label "has Point" ;
+    rdfs:comment "Links a participant to their performed trials." .
+	
+brick:hasPoint a owl:ObjectProperty ;
+    rdfs:domain brick:Cooling_Coil ;
+    rdfs:range brick:FCU_CLG_RWT ;
+    rdfs:label "has Point" ;
+    rdfs:comment "Links a participant to their performed trials." .
+	
+brick:hasPoint a owl:ObjectProperty ;
+    rdfs:domain brick:Cooling_Coil ;
+    rdfs:range brick:FCU_HVLV ;
+    rdfs:label "has Point" ;
+    rdfs:comment "Links a participant to their performed trials." .
+	
+brick:hasPoint a owl:ObjectProperty ;
+    rdfs:domain brick:Cooling_Coil ;
+    rdfs:range brick:FCU_HVLV_DM ;
+    rdfs:label "has Point" ;
+    rdfs:comment "Links a participant to their performed trials." .
+	
+	
+	
+# Relationships between areas and sensors (Heating Coil)
+brick:hasPoint a owl:ObjectProperty ;
+    rdfs:domain brick:Heating_Coil ;
+    rdfs:range brick:FCU_HTG_EWT ;
+    rdfs:label "has Point" ;
+    rdfs:comment "Links a participant to their performed trials." .
+	
+brick:hasPoint a owl:ObjectProperty ;
+    rdfs:domain brick:Heating_Coil ;
+    rdfs:range brick:FCU_HTG_GPM ;
+    rdfs:label "has Point" ;
+    rdfs:comment "Links a participant to their performed trials." .
+	
+brick:hasPoint a owl:ObjectProperty ;
+    rdfs:domain brick:Heating_Coil ;
+    rdfs:range brick:FCU_HTG_RWT ;
+    rdfs:label "has Point" ;
+    rdfs:comment "Links a participant to their performed trials." .
+	
+brick:hasPoint a owl:ObjectProperty ;
+    rdfs:domain brick:Heating_Coil ;
+    rdfs:range brick:FCU_CVLV ;
+    rdfs:label "has Point" ;
+    rdfs:comment "Links a participant to their performed trials." .
+	
+brick:hasPoint a owl:ObjectProperty ;
+    rdfs:domain brick:Heating_Coil ;
+    rdfs:range brick:FCU_HVLV_CVLV_DM ;
+    rdfs:label "has Point" ;
+    rdfs:comment "Links a participant to their performed trials." .
+	
+# Relationships between areas and sensors (Supply Air Fan)
+brick:hasPoint a owl:ObjectProperty ;
+    rdfs:domain brick:Supply_air_fan ;
+    rdfs:range brick:FAN_CTRL ;
+    rdfs:label "has Point" ;
+    rdfs:comment "Links a participant to their performed trials." .
+	
+brick:hasPoint a owl:ObjectProperty ;
+    rdfs:domain brick:Supply_air_fan ;
+    rdfs:range brick:FCU_SPD ;
+    rdfs:label "has Point" ;
+    rdfs:comment "Links a participant to their performed trials." .
+	
+brick:hasPoint a owl:ObjectProperty ;
+    rdfs:domain brick:Supply_air_fan ;
+    rdfs:range brick:FCU_WAT ;
+    rdfs:label "has Point" ;
+    rdfs:comment "Links a participant to their performed trials." .
+	
+
+	
+
+
+	
+
+			
+
+
+
+
+
