@@ -14,7 +14,7 @@ Each of the following directories contains all necessary files for preprocessing
 - `LeakDB/` – Imputation project for the LeakDB water distribution dataset
 - `L-Town/` – Imputation project for the L-Town water network benchmark
 - `Metr-LA/` – Imputation project for the Metr-LA traffic dataset
-- `LBNL/` – Imputation project for the LBNL HVAC system dataset
+- `LBNL_FDD_Dataset_FCU/` – Imputation project for the LBNL HVAC system dataset
 
 Each project folder includes:
 - Raw or intermediate sensor data
