@@ -1,0 +1,91 @@
+@prefix : <http://example.org/traffic#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix ontoroad: <http://ontology.ontoroad.org/> .
+
+:TrafficOntology rdf:type owl:Ontology .
+
+### Classes
+:TrafficSensor rdf:type owl:Class ;
+    rdfs:subClassOf sosa:Sensor .
+
+:TrafficObservation rdf:type owl:Class ;
+    rdfs:subClassOf sosa:Observation .
+
+:RoadSegment rdf:type owl:Class ;
+    rdfs:subClassOf ontoroad:RoadSegment .
+
+:NetworkDistance rdf:type owl:Class ;
+    rdfs:comment "A class representing a network distance between two sensors." .
+
+### Properties
+:hasSensorId rdf:type owl:DatatypeProperty ;
+    rdfs:domain :TrafficSensor ;
+    rdfs:range xsd:integer ;  # or xsd:integer depending on how you represent the id
+    rdfs:comment "Unique identifier for a traffic sensor." .
+
+# Property for the unique id of the RoadSegment
+:hasRoadId rdf:type owl:DatatypeProperty ;
+    rdfs:domain :RoadSegment ;
+    rdfs:range xsd:integer ;  # or xsd:integer depending on how you represent the id
+    rdfs:comment "Unique identifier for a road segment." .
+	
+:hasObservation rdf:type owl:ObjectProperty ;
+    rdfs:domain :TrafficSensor ;
+    rdfs:range :TrafficObservation ;
+    rdfs:comment "Links a traffic sensor to the traffic observation it made." .
+
+:installedOn rdf:type owl:ObjectProperty ;
+    rdfs:domain :TrafficSensor ;
+    rdfs:range :RoadSegment ;
+    rdfs:comment "Links a sensor to the road segment where it is installed." .
+
+:roadType rdf:type owl:DatatypeProperty ;
+    rdfs:domain :RoadSegment ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Type of the road segment (e.g., highway, residential)." .
+
+:maxSpeed rdf:type owl:DatatypeProperty ;
+    rdfs:domain :RoadSegment ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Speed limit on the road segment." .
+
+:numberOfLanes rdf:type owl:DatatypeProperty ;
+    rdfs:domain :RoadSegment ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of lanes in the road segment." .
+
+:hasSpeed rdf:type owl:DatatypeProperty ;
+    rdfs:domain :TrafficObservation ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Observed speed at a sensor location." .
+
+### Sensor-to-sensor relationship
+:networkDistance rdf:type owl:ObjectProperty ;
+    rdfs:domain :TrafficSensor ;
+    rdfs:range :NetworkDistance ;
+    rdfs:comment "Links a sensor to a NetworkDistance resource." .
+
+:fromSensor rdf:type owl:ObjectProperty ;
+    rdfs:domain :NetworkDistance ;
+    rdfs:range :TrafficSensor ;
+    rdfs:comment "The starting sensor of the network distance." .
+
+:toSensor rdf:type owl:ObjectProperty ;
+    rdfs:domain :NetworkDistance ;
+    rdfs:range :TrafficSensor ;
+    rdfs:comment "The ending sensor of the network distance." .
+
+:distanceValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain :NetworkDistance;
+    rdfs:range xsd:float ;
+    rdfs:comment "Value of the network distance between sensors." .
+
+:distanceUnit rdf:type owl:DatatypeProperty ;
+    rdfs:domain :NetworkDistance ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Unit for the network distance (e.g., meters)." .
