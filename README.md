@@ -26,5 +26,7 @@ Each project folder includes:
 - Evaluation metrics for various missingness scenarios
 
 To execute, first download the following files (they can all be found in the Data Folder:
-- Files for `LeakDB/`: measurements_LTown.csv, 2018_Scada-Demands.csv, 2018_SCADA_Flows.csv, 2018_SCADA_Levels.csv, 2018_SCADA_Pressures.csv
+- Files for `LeakDB/`: scenario_data.pkl, knowledge_graph1-LeakDB.ttl, measurements_1_LeakDB.csv
+- Files for `L-Town/`: measurements_LTown.csv, 2018_Scada-Demands.csv, 2018_SCADA_Flows.csv, 2018_SCADA_Levels.csv, 2018_SCADA_Pressures.csv
+
 
