@@ -7,6 +7,8 @@ All data resulting from the testbed can be found in the following Google Drive f
 
 https://drive.google.com/drive/folders/1_42NOmAj7VQmZnmme0VEVyPvD4QLG9Jr
 
+(all processed data can be found in the folder "Processed_Data" inside each of the datasets.
+
 ##  Repository Structure
 
 Each of the following directories contains all necessary files for preprocessing, semantic clustering, and imputation:
@@ -22,3 +24,7 @@ Each project folder includes:
 - Notebooks for construction of the CSV and TTL data
 - Notebooks for clustering, imputation, and evaluation
 - Evaluation metrics for various missingness scenarios
+
+To execute, first download the following files (they can all be found in the Data Folder:
+- Files for `LeakDB/`: measurements_LTown.csv, 2018_Scada-Demands.csv, 2018_SCADA_Flows.csv, 2018_SCADA_Levels.csv, 2018_SCADA_Pressures.csv
+
